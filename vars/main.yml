@@ -1,6 +1,6 @@
 ---
 # file: roles/jupyter/vars/main.yml
-jupyter_network_interface: eth0 # enp0s8
+jupyter_network_interface: enp0s8 # enp0s8|eth0
 jupyter_pkgs:
   - python3
   - python3-setuptools
