@@ -58,15 +58,15 @@
   tags: jupyter
 
 - name: set IP address
-  lineinfile: dest=/etc/jupyterhub/jupyterhub_config.py line="c.JupyterHub.hub_ip = '{{ansible_eth0.ipv4.address}}'"
+  lineinfile: dest=/etc/jupyterhub/jupyterhub_config.py line="c.JupyterHub.hub_ip = '{{ ['ansible_' + jupyter_network_interface]['ipv4']['address'] }}'"
   tags: jupyter
 
 - name: set IP address
-  lineinfile: dest=/etc/jupyterhub/jupyterhub_config.py line="c.JupyterHub.ip = '{{ansible_eth0.ipv4.address}}'"
+  lineinfile: dest=/etc/jupyterhub/jupyterhub_config.py line="c.JupyterHub.ip = '{{ ['ansible_' + jupyter_network_interface]['ipv4']['address'] }}'"
   tags: jupyter
 
 - name: set IP address
-  lineinfile: dest=/etc/jupyterhub/jupyterhub_config.py line="c.JupyterHub.proxy_api_ip = '{{ansible_eth0.ipv4.address}}'"
+  lineinfile: dest=/etc/jupyterhub/jupyterhub_config.py line="c.JupyterHub.proxy_api_ip = '{{ ['ansible_' + jupyter_network_interface]['ipv4']['address'] }}'"
   tags: jupyter
 
 - name: Check to see if config file exists
